@@ -1,0 +1,48 @@
+Principle 1, Spatial Accuracy
+OBJECTIVE is Prevent users from making incorrect furniture or layout decisions because the app misrepresents the size or position of objects.
+BEHAVIOR is Virtual furniture maintains its intended dimensions and position within the scanned room. Users can determine whether an object fits within a selected space.
+CONSTRAINTS is Furniture dimensions must remain consistent after placement, movement, and rotation. Estimated measurements must be identified as estimates. The app must not present uncertain measurements as exact.
+VERIFICATION is Place an object with known dimensions in a measured test space. Its displayed dimensions must match its stored dimensions. Moving or rotating the object must not change its dimensions. A furniture item wider than the available space must be identified as not fitting.
+
+Principle 2, Clear AR Interaction
+OBJECTIVE is Prevent users from becoming confused about how to scan a room, place furniture, or manipulate objects.
+BEHAVIOR is Users receive visible feedback when scanning, selecting, placing, moving, rotating, and deleting objects. The current state of an interaction is visible to the user.
+CONSTRAINTS is Every primary action must provide a visible response. Core actions cannot depend exclusively on gestures without a visible indication of what the gesture does.
+VERIFICATION is A first-time user must be able to complete the sequence scan room, add furniture, place furniture, move or rotate furniture, save room without external instructions.
+
+Principle 3, Unobstructed Physical Context
+OBJECTIVE is Prevent interface elements from obscuring the physical space users are trying to evaluate.
+BEHAVIOR is The room remains visible while users scan, measure, and arrange furniture. Controls appear only when relevant to the current task.
+CONSTRAINTS is Permanent interface elements cannot occupy the central AR viewing area. Measurement labels cannot completely cover the object or surface they describe.
+VERIFICATION is During room scanning and furniture placement, the center of the camera view must remain free of persistent navigation controls. Selecting and deselecting an object must show and hide its object-specific controls.
+
+Principle 4, User Control
+OBJECTIVE is Prevent automatic behavior or mistakes from leaving users with a layout they cannot correct.
+BEHAVIOR is Users can reposition, rotate, replace, and remove furniture after placement. Users can cancel an incomplete action before committing it.
+CONSTRAINTS is No automatically generated furniture placement is permanent. Saving a room cannot prevent later modification. User-created layouts cannot be overwritten without an explicit user action.
+VERIFICATION is After placing an object, a test must confirm that the user can move it, rotate it, delete it, and place a replacement. Reopening a saved room must allow the layout to be edited.
+
+Principle 5, Recoverable Scanning
+OBJECTIVE is Prevent incomplete or unsuccessful room scans from producing misleading room information or forcing users to restart the application.
+BEHAVIOR is Users are informed when the room has not been sufficiently captured. They can continue scanning, retry the scan, or cancel it.
+CONSTRAINTS is An incomplete scan cannot be presented as a successfully completed room. A failed scan cannot create a normal saved room without warning the user.
+VERIFICATION is Intentionally stop a scan before the minimum required room information is captured. The app must identify the scan as incomplete and provide both continue/retry and cancel paths.
+
+Principle 6, Saved State Integrity
+OBJECTIVE is Prevent users from losing room layouts or reopening rooms that differ from what they previously saved.
+BEHAVIOR is Saved rooms retain their room information and furniture arrangements when reopened.
+CONSTRAINTS is Saving must preserve furniture type, position, orientation, and dimensions. Users must be able to intentionally delete a saved room.
+VERIFICATION is Create a room containing at least three furniture objects, save it, close it, and reopen it. The same three objects must be present with their saved dimensions, positions, and orientations.
+
+Principle 7, Privacy of the Home
+OBJECTIVE is Prevent users from unknowingly capturing, retaining, or exposing information about their private living spaces.
+BEHAVIOR is Users know when room scanning is occurring and can delete stored room information.
+CONSTRAINTS is Scanning cannot begin without user action. Access to required device permissions must be requested before the associated functionality begins. Saved rooms must have a deletion mechanism.
+VERIFICATION is Attempt to start scanning without the required permission; scanning must not begin. Delete a saved room and verify that it no longer appears in the user's saved-room interface.
+
+Principle 8, Core Workflow First
+OBJECTIVE is Prevent secondary features from increasing complexity before the primary room-visualization experience works end to end.
+BEHAVIOR is Users can complete the core journey of capturing a room, adding furniture, evaluating placement, and saving the result.
+CONSTRAINTS is The initial release does not require AI-generated layouts, furniture purchasing, social sharing, apartment recommendations, collaborative editing, or automated interior design.
+VERIFICATION is The MVP is considered functionally complete only when automated or manual acceptance tests demonstrate the full sequence… 
+Scan room, View dimensions, Add furniture, Place furniture, Evaluate fit, Modify furniture, Save room, Reopen room
