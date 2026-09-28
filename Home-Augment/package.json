@@ -1,0 +1,32 @@
+{
+  "name": "home-augment",
+  "version": "1.0.0",
+  "description": "An application for visualizing and augmenting home spaces with furniture.",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/Home-Augment.git"
+  },
+  "keywords": [
+    "home",
+    "augmented-reality",
+    "furniture",
+    "visualization"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.6"
+  }
+}
